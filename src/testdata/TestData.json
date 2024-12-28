@@ -3,5 +3,17 @@
     {
         "emailID" : "sandesh.sampathgiri@hudini.io",
         "password": "Testing@123"
+    },
+
+    "invalidPassword" :
+    {
+        "emailID" : "sandesh.sampathgiri@hudini.io",
+        "password": "Hudini@com" 
+    },
+
+    "invalidCredentials" :
+    {
+        "emailID" : "testing.asdf@hudini.io",
+        "password": "Testing@56" 
     }
 }

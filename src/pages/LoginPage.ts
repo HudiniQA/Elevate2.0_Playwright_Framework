@@ -10,7 +10,10 @@ export default class LoginPage
     private readonly walkthroughBtn1 = "(//div[@class='first-time-login-walkthrough']//img)[3]";
     private readonly walkthroughBtn2 = "(//div[@class='first-time-login-walkthrough']//img)[3]";
     private readonly walkthroughBtn3 = "(//div[@class='first-time-login-walkthrough']//img)[3]";
-
+    private readonly emailValidationTxt = "//p[@id='email-helper-text']";
+    private readonly passwordValidationTxt = "//p[@id='password-helper-text']";
+    private readonly incorrectCredentialsTxt = "//div[text()='Login failed - Incorrect username or password.']";
+    private readonly userdoesntexistTxt = "//div[text()='Login failed - User does not exist.']";
 
     constructor(private page: Page)
     {
@@ -26,7 +29,7 @@ export default class LoginPage
     async getPageTitle()
     {
         var pageTitle = this.page.title();
-        await expect(this.page).toHaveTitle('Hudini CMS123')
+        await expect(this.page).toHaveTitle('Hudini CMS')
         .catch((error) => {
             logger.error('Title mismatch. Test case failed');
             throw error;
@@ -94,6 +97,61 @@ export default class LoginPage
         const homePage = new HomePage(this.page);
         return homePage;
     }
-}
 
+    async verifyEmailRequiredValidationMessage()
+    {
+       try{
+        const elementText = await this.page
+        .locator(this.emailValidationTxt)
+        .textContent();
+        logger.info(elementText);
 
+        await expect(elementText).toBe('Email is required');
+
+        logger.info("Test case passed");
+       }
+       catch(error) {
+       logger.error('Validation message mismatch. Test case failed');
+       throw error;
+       }
+    }
+
+    async verifyPasswordRequiredValidationMessage()
+    {
+       try{
+        const elementText = await this.page
+        .locator(this.passwordValidationTxt)
+        .textContent();
+        logger.info(elementText);
+
+        await expect(elementText).toBe('Password is required');
+
+        logger.info("Test case passed");
+       }
+       catch(error) {
+       logger.error('Validation message mismatch. Test case failed');
+       throw error;
+       }
+    }
+
+    async verifyLoginWithIncorrectCredentials()
+    {
+        
+        await expect(this.page.locator(this.incorrectCredentialsTxt)).toHaveText('Login failed - Incorrect username or password.', { timeout: 90000,
+        }).catch((error) => {
+            logger.error(`User is able to login with incorrect credentials: ${error}`);
+            throw error;
+        }).then(()=> logger.info("User is unable to login as expected"));
+           
+        }
+
+        async verifyLoginWithInvalidCredentials()
+    {        
+        await expect(this.page.locator(this.userdoesntexistTxt)).toHaveText('Login failed - User does not exist.', { timeout: 90000,
+        }).catch((error) => {
+            logger.error(`User is able to login even if the user does not exist in the system: ${error}`);
+            throw error;
+        }).then(()=> logger.info("User is unable to login as expected"));
+           
+        }
+   }
