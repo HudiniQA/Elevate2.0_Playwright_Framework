@@ -23,6 +23,17 @@ export default class LoginPage
         logger.info("Navigated to Elevate Staging instance");
     }
 
+    async getPageTitle()
+    {
+        var pageTitle = this.page.title();
+        //await expect(this.page).toHaveTitle('Hudini CMS123');
+        await expect(this.page).toHaveTitle('Hudini CMS123')
+        .catch((error) => {
+            logger.error('Title does not match');
+            throw error;
+        }).then(()=> logger.info("Title matched successfully"));
+    }
+
     async enterEmailAddress(emailid : string)
     {
         await this.page.locator(this.emailTxtField).fill(emailid);

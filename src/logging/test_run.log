@@ -1,8 +1,6 @@
-2024-12-28T10:36:50+05:30 [info]: Navigated to Elevate Staging instance
-2024-12-28T10:36:50+05:30 [info]: Entered email address successfully
-2024-12-28T10:36:50+05:30 [info]: Entered password successfully
-2024-12-28T10:36:50+05:30 [info]: Login button clicked successfully
-2024-12-28T10:36:53+05:30 [info]: First walkthrough button clicked successfully
-2024-12-28T10:36:53+05:30 [info]: Second walkthrough button clicked successfully
-2024-12-28T10:36:53+05:30 [info]: Third walkthrough button clicked successfully
-2024-12-28T10:36:53+05:30 [info]: Clicked login button succesfully
+2024-12-28T13:31:53+05:30 [info]: Test case->Verify the page title -> Execution started
+2024-12-28T13:31:58+05:30 [info]: Navigated to Elevate Staging instance
+2024-12-28T13:32:03+05:30 [error]: Title does not match
+2024-12-28T13:32:07+05:30 [info]: Test case->Verify the page title -> Execution started
+2024-12-28T13:32:13+05:30 [info]: Navigated to Elevate Staging instance
+2024-12-28T13:32:18+05:30 [error]: Title does not match
