@@ -11,6 +11,20 @@ import { defineConfig, devices } from '@playwright/test';
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
+
+if (!process.env.NODE_ENV) {
+
+  //If the environment is not set, then pick the values from config/.env file
+  require("dotenv").config({ path: `${__dirname}//src//config//.env` });
+} 
+else 
+{
+  //If the environment is set, then pick the values from config/.env.staging OR config/.env.uat files
+  require("dotenv").config({
+    path: `${__dirname}//src//config//.env.${process.env.NODE_ENV}`,
+  });
+}
+
 module.exports = defineConfig({
   timeout: 90000,
   testDir: './src/tests',

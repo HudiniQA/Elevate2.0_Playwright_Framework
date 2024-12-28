@@ -1,5 +1,6 @@
 import  {Page, expect} from "@playwright/test";
 import HomePage from "./HomePage";
+import logger from "../utils/LoggerUtil";
 
 export default class LoginPage
 {
@@ -19,16 +20,19 @@ export default class LoginPage
     async navigateToLoginPage()
     {
         await this.page.goto("/");
+        logger.info("Navigated to Elevate Staging instance");
     }
 
     async enterEmailAddress(emailid : string)
     {
         await this.page.locator(this.emailTxtField).fill(emailid);
+        logger.info("Entered email address successfully")
     }
 
     async enterPassword(password : string)
     {
         await this.page.locator(this.passwordTxtField).fill(password);
+        logger.info("Entered password successfully");
     }
 
     async clickLoginBtn()
@@ -37,9 +41,9 @@ export default class LoginPage
         .locator(this.loginBtn)
         .click()
         .catch((error) => {
-            console.error('Error clicking login button: ${error}');
+            logger.error('Error clicking login button: ${error}');
             throw error;    //rethrow the error if needed
-        })
+        }).then(()=> logger.info("Login button clicked successfully"));
 
     }
 
@@ -49,9 +53,9 @@ export default class LoginPage
         .locator(this.walkthroughBtn1)
         .click()
         .catch((error) => {
-            console.error('Error clicking the first walkthrough button: ${error}');
+            logger.error('Error clicking the first walkthrough button: ${error}');
             throw error;    //rethrow the error if needed
-        })
+        }).then(()=> logger.info("First walkthrough button clicked successfully"));
         
     }
 
@@ -61,9 +65,9 @@ export default class LoginPage
         .locator(this.walkthroughBtn2)
         .click()
         .catch((error) => {
-            console.error('Error clicking the second walkthrough button: ${error}');
+            logger.error('Error clicking the second walkthrough button: ${error}');
             throw error;    //rethrow the error if needed
-        })
+        }).then(()=> logger.info("Second walkthrough button clicked successfully"));
    
     }
 
@@ -73,9 +77,9 @@ export default class LoginPage
         .locator(this.walkthroughBtn3)
         .click()
         .catch((error) => {
-            console.error('Error clicking the third walkthrough button: ${error}');
+            logger.error('Error clicking the third walkthrough button: ${error}');
             throw error;    //rethrow the error if needed
-        })
+        }).then(()=> logger.info("Third walkthrough button clicked successfully"));
 
         const homePage = new HomePage(this.page);
         return homePage;
