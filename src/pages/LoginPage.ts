@@ -20,18 +20,17 @@ export default class LoginPage
     async navigateToLoginPage()
     {
         await this.page.goto("/");
-        logger.info("Navigated to Elevate Staging instance");
+        logger.info("Application opened successfully");
     }
 
     async getPageTitle()
     {
         var pageTitle = this.page.title();
-        //await expect(this.page).toHaveTitle('Hudini CMS123');
         await expect(this.page).toHaveTitle('Hudini CMS123')
         .catch((error) => {
-            logger.error('Title does not match');
+            logger.error('Title mismatch. Test case failed');
             throw error;
-        }).then(()=> logger.info("Title matched successfully"));
+        }).then(()=> logger.info("Title matched. Test case passed"));
     }
 
     async enterEmailAddress(emailid : string)

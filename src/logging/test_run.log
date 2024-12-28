@@ -1,6 +1,3 @@
-2024-12-28T13:31:53+05:30 [info]: Test case->Verify the page title -> Execution started
-2024-12-28T13:31:58+05:30 [info]: Navigated to Elevate Staging instance
-2024-12-28T13:32:03+05:30 [error]: Title does not match
-2024-12-28T13:32:07+05:30 [info]: Test case->Verify the page title -> Execution started
-2024-12-28T13:32:13+05:30 [info]: Navigated to Elevate Staging instance
-2024-12-28T13:32:18+05:30 [error]: Title does not match
+2024-12-28T13:55:06+05:30 [info]: ===Currently running test: Verify the page title===
+2024-12-28T13:55:12+05:30 [info]: Application opened successfully
+2024-12-28T13:55:18+05:30 [error]: Title mismatch. Test case failed
