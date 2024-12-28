@@ -60,8 +60,10 @@ export default class LoginPage
 
     }
 
-    async clickWalkthroughBtn1()
+
+    async navigateToHomePage()
     {
+
         await this.page
         .locator(this.walkthroughBtn1)
         .click()
@@ -69,11 +71,7 @@ export default class LoginPage
             logger.error('Error clicking the first walkthrough button: ${error}');
             throw error;    //rethrow the error if needed
         }).then(()=> logger.info("First walkthrough button clicked successfully"));
-        
-    }
 
-    async clickWalkthroughBtn2()
-    {
         await this.page
         .locator(this.walkthroughBtn2)
         .click()
@@ -81,11 +79,7 @@ export default class LoginPage
             logger.error('Error clicking the second walkthrough button: ${error}');
             throw error;    //rethrow the error if needed
         }).then(()=> logger.info("Second walkthrough button clicked successfully"));
-   
-    }
 
-    async clickWalkthroughBtn3()
-    {
         await this.page
         .locator(this.walkthroughBtn3)
         .click()
@@ -96,6 +90,7 @@ export default class LoginPage
 
         const homePage = new HomePage(this.page);
         return homePage;
+
     }
 
     async verifyEmailRequiredValidationMessage()

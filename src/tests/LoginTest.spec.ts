@@ -14,9 +14,9 @@ test("Verify if the user is able to login successfully", async ({ page }) => {
     await loginPage.enterPassword(testData.password);
 
     await loginPage.clickLoginBtn();
-    await loginPage.clickWalkthroughBtn1();
-    await loginPage.clickWalkthroughBtn2();
-    const homePage = await loginPage.clickWalkthroughBtn3();
+    const homePage = await loginPage.navigateToHomePage();
+   // await loginPage.clickWalkthroughBtn2();
+   // const homePage = await loginPage.clickWalkthroughBtn3();
     homePage.expectDashboardLocatorToBeVisible();
 });
 
