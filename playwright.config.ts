@@ -16,9 +16,8 @@ if (!process.env.NODE_ENV) {
 
   //If the environment is not set, then pick the values from config/.env file
   require("dotenv").config({ path: `${__dirname}//src//config//.env` });
-} 
-else 
-{
+}
+else {
   //If the environment is set, then pick the values from config/.env.staging OR config/.env.uat files
   require("dotenv").config({
     path: `${__dirname}//src//config//.env.${process.env.NODE_ENV}`,
@@ -28,7 +27,7 @@ else
 module.exports = defineConfig({
   timeout: 30000,
   testDir: './src/tests',
-  workers : 1,
+  workers: 1,
   /* Run tests in files in parallel */
   fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -43,19 +42,26 @@ module.exports = defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-      baseURL: "https://cms.hudinielevate-stage.io/login",
+    baseURL: "https://cms.hudinielevate-stage.io/login",
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
-    screenshot : "on",
-    video : "on"
+    screenshot: "on",
+    video: "on"
   },
 
   /* Configure projects for major browsers */
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      
+      use: { ...devices['Desktop Chrome'], 
+            viewport : null,
+            launchOptions : {
+              args : ['--start-maximized']
+            } },
+      
+
     },
 
     // {

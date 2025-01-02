@@ -369,3 +369,43 @@
 2024-12-28T22:18:40+05:30 [info]: Entered password successfully
 2024-12-28T22:18:41+05:30 [info]: Login button clicked successfully
 2024-12-28T22:18:41+05:30 [info]: User is unable to login as expected
+2024-12-28T22:23:39+05:30 [info]: Application opened successfully
+2024-12-28T22:23:39+05:30 [info]: Entered email address successfully
+2024-12-28T22:23:39+05:30 [info]: Entered password successfully
+2024-12-28T22:23:39+05:30 [info]: Login button clicked successfully
+2024-12-28T22:23:41+05:30 [info]: First walkthrough button clicked successfully
+2024-12-28T22:23:41+05:30 [info]: Second walkthrough button clicked successfully
+2024-12-28T22:23:41+05:30 [info]: Third walkthrough button clicked successfully
+2024-12-28T22:23:41+05:30 [info]: Clicked login button succesfully
+2024-12-28T22:23:42+05:30 [info]: ===Currently running test: Verify the page title===
+2024-12-28T22:23:47+05:30 [info]: Application opened successfully
+2024-12-28T22:23:47+05:30 [info]: Title matched. Test case passed
+2024-12-28T22:23:47+05:30 [info]: ===Currently running test: Verify the display of validation message when the user clicks on Login button without entering any credentials===
+2024-12-28T22:23:53+05:30 [info]: Application opened successfully
+2024-12-28T22:23:53+05:30 [info]: Login button clicked successfully
+2024-12-28T22:23:53+05:30 [info]: Email is required
+2024-12-28T22:23:53+05:30 [info]: Test case passed
+2024-12-28T22:23:54+05:30 [info]: ===Currently running test: Verify the display of validation message when the user clicks on Login button without entering the password===
+2024-12-28T22:23:59+05:30 [info]: Application opened successfully
+2024-12-28T22:23:59+05:30 [info]: Entered email address successfully
+2024-12-28T22:23:59+05:30 [info]: Login button clicked successfully
+2024-12-28T22:23:59+05:30 [info]: Password is required
+2024-12-28T22:23:59+05:30 [info]: Test case passed
+2024-12-28T22:24:00+05:30 [info]: ===Currently running test: Verify the display of validation message when the user clicks on Login button without entering the email address===
+2024-12-28T22:24:05+05:30 [info]: Application opened successfully
+2024-12-28T22:24:05+05:30 [info]: Entered password successfully
+2024-12-28T22:24:05+05:30 [info]: Login button clicked successfully
+2024-12-28T22:24:05+05:30 [info]: Email is required
+2024-12-28T22:24:05+05:30 [info]: Test case passed
+2024-12-28T22:24:06+05:30 [info]: ===Currently running test: Verify if the user is able to login with invalid credentials but the user exists===
+2024-12-28T22:24:10+05:30 [info]: Application opened successfully
+2024-12-28T22:24:10+05:30 [info]: Entered email address successfully
+2024-12-28T22:24:10+05:30 [info]: Entered password successfully
+2024-12-28T22:24:10+05:30 [info]: Login button clicked successfully
+2024-12-28T22:24:11+05:30 [info]: User is unable to login as expected
+2024-12-28T22:24:12+05:30 [info]: ===Currently running test: Verify if the user is able to login with invalid credentials and the user also does not exist===
+2024-12-28T22:24:17+05:30 [info]: Application opened successfully
+2024-12-28T22:24:17+05:30 [info]: Entered email address successfully
+2024-12-28T22:24:17+05:30 [info]: Entered password successfully
+2024-12-28T22:24:17+05:30 [info]: Login button clicked successfully
+2024-12-28T22:24:17+05:30 [info]: User is unable to login as expected
